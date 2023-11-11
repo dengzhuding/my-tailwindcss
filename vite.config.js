@@ -8,4 +8,18 @@ export default defineConfig({
     vue(),
     vueJsx()
   ],
+  build: {},
+  resolve: {
+    alias: {
+      '@style': './src/assets/style',
+      '@components': './src/components',
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "./src/assets/style/variable.scss";'
+      }
+    }
+  }
 })
